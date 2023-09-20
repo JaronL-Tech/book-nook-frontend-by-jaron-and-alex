@@ -6,10 +6,10 @@ import axios from "axios";
 import SearchBar from "../../components/Searchbar/Searchbar";
 import ReviewList from "../../components/ReviewList/ReviewList";
 
-const SearchPage = ({}) => {
+const SearchPage = ({ setBook }) => {
   return (
     <div>
-      <SearchBar> </SearchBar>
+      <SearchBar setBook={setBook}> </SearchBar>
       <ReviewList> </ReviewList>
     </div>
   );

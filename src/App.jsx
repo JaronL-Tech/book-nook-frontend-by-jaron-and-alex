@@ -6,7 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import "./pages/SearchPages";
+import SearchPage from "./pages/SearchPage/Searchpage.Jsx";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -19,14 +19,13 @@ import { useState } from "react";
 function App() {
   const [Book, setBook] = useState([]);
   const [activeIndex, setactiveIndex] = useState(-1);
-
+  const fetchSearchResults= async => 
   // // const filterbooks = (searchvalue) => {
   // //   let filterBooks = book.filter(books) => books.id
   // }
   return (
     <div>
       <Navbar />
-      <Searchbar setBook={setBook} />
       <Routes>
         <Route
           path="/"
@@ -46,7 +45,9 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/search" element={<SearchPage setBook={setBook} />} />
       </Routes>
+
       <Footer />
     </div>
   );
