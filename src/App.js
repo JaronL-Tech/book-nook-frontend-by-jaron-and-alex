@@ -27,9 +27,13 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route 
-        path="/add"
-        element={ }
+        <Route
+          path="/add"
+          element={
+            <PrivateRoute>
+              <Book />
+            </PrivateRoute>
+          }
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
