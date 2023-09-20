@@ -15,11 +15,20 @@ import SearchBar from "./components/Searchbar/Searchbar";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import { useState } from "react";
+import axios from "axios";
 
 function App() {
   const [Book, setBook] = useState([]);
   const [activeIndex, setactiveIndex] = useState(-1);
-  const fetchSearchResults= async => 
+  const fetchSearchResults = async () => {
+    try {
+      const response = await axios.get(
+        "https://www.googleapis.com/books/v1/volumes?q="
+      );
+    } catch (error) {
+      console.warn("Error in Fetch SearchResults request", error);
+    }
+  };
   // // const filterbooks = (searchvalue) => {
   // //   let filterBooks = book.filter(books) => books.id
   // }
