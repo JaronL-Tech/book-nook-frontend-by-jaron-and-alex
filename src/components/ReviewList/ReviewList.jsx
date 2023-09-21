@@ -1,5 +1,7 @@
+import Review from "../Review/Review";
 const ReviewList = ({}) => {
-  return <></>;
+  const reviewItems = reviews.map((review) => <Review />);
+  return <ul></ul>;
 };
 
 export default ReviewList;
