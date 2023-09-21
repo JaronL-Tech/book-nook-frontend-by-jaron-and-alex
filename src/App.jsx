@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // import SearchPage from "./pages/SearchPage/Searchpage.Jsx";
-import BookDetailsPage from "./pages/BookDetailsPage/BookDetailsPage.Jsx";
+import BookDetailsPage from "./pages/BookDetailsPage/BookDetailsPage.jsx";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -38,18 +38,25 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route
+        {/*        <Route
           path="/add"
           element={
             <PrivateRoute>
               <Book />
             </PrivateRoute>
           }
-        />
+        /> */}
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* <Route path="/search" element={<SearchPage setBook={setBook} />} /> */}
-        <PrivateRoute path="/bookdetailspage" element={<BookDetailsPage />} />
+        <Route
+          path="/bookdetailspage"
+          element={
+            <PrivateRoute>
+              <BookDetailsPage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
 
       <Footer />

@@ -2,25 +2,30 @@ import axios from "axios";
 import react from "react";
 import { useState } from "react";
 
-const ReviewForm = ({ onNewBook }) => {
+const ReviewForm = ({ fetchBookDetailsDto, user, token }) => {
   const [submitting, setsubmitting] = useState(false);
   const [BookId, setBookId] = useState("");
   const [Text, setText] = useState("");
-  const [Rating, setRating] = useState("");
+  const [Rating, setRating] = useState(0);
 
   const handdleSubmit = async (e) => {
     e.preventDefault();
     setsubmitting(true);
 
-    const formData = [BookId, Text, Rating, UserId];
+    const formData = { BookId, Text, Rating, userId: user.id };
 
     try {
       const response = await axios.post(
         "https://localhost:5001/api/reviews/",
-        formData
+        formData,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
       );
       if (response.status === 201) {
-        onNewBook();
+        fetchBookDetailsDto();
       }
     } catch (error) {
       console.warn("Error submitting new Title form");
@@ -41,7 +46,13 @@ const ReviewForm = ({ onNewBook }) => {
         </div>
         <div>
           <label>Rating</label>
-          <input value={Rating} onChange={(e) => setRating(e.target.value)} />
+          <input
+            type="number"
+            max="5"
+            min="0"
+            value={Rating}
+            onChange={(e) => setRating(e.target.value)}
+          />
         </div>
       </div>
       <button type="submit">Add Review</button>

@@ -7,6 +7,7 @@ import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
 const BookDetailsPage = ({ bookId }) => {
   const [user, token] = useAuth();
+  console.log(user);
 
   const fetchBookDetailsDto = async () => {
     try {
@@ -39,12 +40,15 @@ const BookDetailsPage = ({ bookId }) => {
       console.warn("Error with BookDetails request", error);
     }
   };
-
   return (
     <div>
       {" "}
-      <ReviewForm />
-      <Book />;
+      <ReviewForm
+        fetchBookDetailsDto={fetchBookDetailsDto}
+        user={user}
+        token={token}
+      />
+      {/* <Book />; */}
     </div>
   );
 };
