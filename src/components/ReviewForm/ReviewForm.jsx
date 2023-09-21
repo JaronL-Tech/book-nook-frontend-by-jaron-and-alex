@@ -12,7 +12,7 @@ const ReviewForm = ({ onNewBook }) => {
     e.preventDefault();
     setsubmitting(true);
 
-    const formData = [BookId, Text, Rating];
+    const formData = [BookId, Text, Rating, UserId];
 
     try {
       const response = await axios.post(

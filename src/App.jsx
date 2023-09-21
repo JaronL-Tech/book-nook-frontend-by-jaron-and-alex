@@ -49,7 +49,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* <Route path="/search" element={<SearchPage setBook={setBook} />} /> */}
-        <Route path="/reviewform" element={<ReviewForm />} />
+        <PrivateRoute path="/bookdetailspage" element={<BookDetailsPage />} />
       </Routes>
 
       <Footer />
