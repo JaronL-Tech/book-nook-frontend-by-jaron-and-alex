@@ -27,7 +27,7 @@ const BookDetailsPage = ({ bookId }) => {
   const fetchBookDetails = async () => {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${bookId}`,
+        `https://www.googleapis.com/books/v1/volumes/${bookId}`,
         {
           headers: {
             Authorization: "Bearer " + token,
