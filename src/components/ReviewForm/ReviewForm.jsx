@@ -25,7 +25,7 @@ const ReviewForm = ({ fetchBookDetailsDto, user, token }) => {
         }
       );
       if (response.status === 201) {
-        fetchBookDetailsDto();
+        fetchBookDetailsDto(BookId);
       }
     } catch (error) {
       console.warn("Error submitting new Title form");

@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import Book from "../../components/Book/Book.JSX";
 import axios from "axios";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
@@ -9,7 +8,7 @@ const BookDetailsPage = ({ bookId }) => {
   const [user, token] = useAuth();
   console.log(user);
 
-  const fetchBookDetailsDto = async () => {
+  const fetchBookDetailsDto = async (bookId) => {
     try {
       let response = await axios.get(
         `https://localhost:5001/api/bookdetails/${bookId}`,
@@ -19,6 +18,7 @@ const BookDetailsPage = ({ bookId }) => {
           },
         }
       );
+      console.log(response);
       return response.data;
     } catch (error) {
       console.warn("Error with BookDetailsDto request", error);
@@ -42,13 +42,11 @@ const BookDetailsPage = ({ bookId }) => {
   };
   return (
     <div>
-      {" "}
       <ReviewForm
         fetchBookDetailsDto={fetchBookDetailsDto}
         user={user}
         token={token}
       />
-      {/* <Book />; */}
     </div>
   );
 };
