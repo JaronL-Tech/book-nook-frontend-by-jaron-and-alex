@@ -1,15 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import Book from "../../components/Book/Book.JSX";
 import axios from "axios";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
+import Book from "../../components/Book/Book.jsx";
 
-const BookDetailsPage = ({ bookId }) => {
+const BookDetailsPage = ({}) => {
+  const bookId = "gttDCwAAQBAJ";
   const [user, token] = useAuth();
   console.log(user);
 
-  const fetchBookDetailsDto = async () => {
+  const fetchBookDetailsDto = async (bookId) => {
     try {
       let response = await axios.get(
         `https://localhost:5001/api/bookdetails/${bookId}`,
@@ -19,36 +20,20 @@ const BookDetailsPage = ({ bookId }) => {
           },
         }
       );
+      console.log(response);
       return response.data;
     } catch (error) {
       console.warn("Error with BookDetailsDto request", error);
     }
   };
-  const fetchBookDetails = async () => {
-    try {
-      let response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes/${bookId}`,
-        {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        }
-      );
-
-      return response.data;
-    } catch (error) {
-      console.warn("Error with BookDetails request", error);
-    }
-  };
   return (
     <div>
-      {" "}
+      <Book bookId={bookId} />
       <ReviewForm
         fetchBookDetailsDto={fetchBookDetailsDto}
         user={user}
         token={token}
       />
-      {/* <Book />; */}
     </div>
   );
 };

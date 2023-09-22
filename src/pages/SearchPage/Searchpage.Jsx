@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
 import SearchBar from "../../components/Searchbar/Searchbar";
-import ReviewList from "../../components/ReviewList/ReviewList";
+import ResultsList from "../../components/ResultsList/ResultsList";
 
 const SearchPage = ({ setBook }) => {
   const fetchSearchResults = async () => {
@@ -20,7 +20,7 @@ const SearchPage = ({ setBook }) => {
   return (
     <div>
       <SearchBar setBook={setBook}> </SearchBar>
-      <ReviewList> </ReviewList>
+      <ResultsList />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // import SearchPage from "./pages/SearchPage/Searchpage.Jsx";
-import BookDetailsPage from "./pages/BookDetailsPage/BookDetailsPage.Jsx";
+import BookDetailsPage from "./pages/BookDetailsPage/BookDetailsPage.jsx";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
