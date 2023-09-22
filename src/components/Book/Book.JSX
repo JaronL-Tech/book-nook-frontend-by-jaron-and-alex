@@ -19,10 +19,9 @@ const Book = ({ bookId }) => {
       setBookDetails(null);
     }
   };
-
   useEffect(() => {
     fetchBookDetails();
-  });
+  }, []);
   return (
     <div>
       {bookdetails && (
