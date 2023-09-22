@@ -6,7 +6,7 @@ import ReviewForm from "../../components/ReviewForm/ReviewForm";
 import Book from "../../components/Book/Book.jsx";
 
 const BookDetailsPage = ({}) => {
-  const bookId = "gttDCwAAQBAJ";
+  const bookId = "IGvdhaVC5QwC";
   const [user, token] = useAuth();
   console.log(user);
 
