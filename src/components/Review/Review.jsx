@@ -1,12 +1,9 @@
-const Review = ({ bookid }) => {
-  const handleclick = (e) => {
-    console.log(e);
-  };
-
+const Review = ({ Review }) => {
   return (
     <div className="review">
-      <span>{bookid}</span>
-      <button onClick={handleclick}>Favorite</button>
+      <h5>{Review.userForDisplayDto}</h5>
+      <p>{Review.Text}</p>
+      <h5>{Review.Rating}</h5>
     </div>
   );
 };
