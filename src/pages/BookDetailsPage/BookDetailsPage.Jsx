@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
-
-const BookDetailsPage = ({ bookId }) => {
+import Book from "../../components/Book/Book";
+const BookDetailsPage = ({}) => {
+  const bookId = "gttDCwAAQBAJ";
   const [user, token] = useAuth();
   console.log(user);
 

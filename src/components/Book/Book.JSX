@@ -20,9 +20,9 @@ const Book = (bookId) => {
     }
   };
 
-  useEffect(() => {});
-
-  bookdetails.volumeInfo.tit;
+  useEffect(() => {
+    fetchBookDetails();
+  });
   return (
     <div>
       {bookdetails && (
