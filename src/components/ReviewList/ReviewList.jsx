@@ -1,22 +1,16 @@
-// import Review from "../Review/Review";
-// import axios from "axios";
-// import { useState } from "react";
-// import react from "react";
+import Review from "../Review/Review";
+import axios from "axios";
+import { useState } from "react";
+import react from "react";
 
-// var Function  {
-//   const ReviewList = ({ fetchBookDetails}) => {
-//   const reviewItems = ReviewList.map((review) => <Review />);
-//   <li key={ReviewList.toString()}>
-// {ReviewList}
-//   </li>
-//   return (
-//     <div className="flex-item">
-//      <h2>ReviewList</h2>
-//      <ul>{ReviewList}</ul>
-//     </div>
-//   );
-// }
+const ReviewList = ({ fetchBookDetailsDto, bookId }) => {
+  const responseData = fetchBookDetailsDto(bookId);
+  const listOfReviews = responseData.Reviews;
+  const Reviews = listOfReviews.map((review) => (
+    <Review key={review.id} review={review} />
+  ));
 
-// };
+  return <div />;
+};
 
-// export default ReviewList;
+export default ReviewList;
