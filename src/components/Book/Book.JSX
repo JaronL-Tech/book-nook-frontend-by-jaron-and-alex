@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 
 const Book = (bookId) => {
   const [bookdetails, setBookDetails] = useState(null);
-
+  console.log(bookId);
   const fetchBookDetails = async () => {
     try {
       let response = await axios.get(
@@ -26,7 +26,10 @@ const Book = (bookId) => {
   return (
     <div>
       {bookdetails && (
-        <img src={bookdetails?.items.imageLinks.thumbnail} alt="book cover" />
+        <img
+          src={bookdetails?.items.volumeInfo.imageLinks.thumbnail}
+          alt="book cover"
+        />
       )}
       {bookdetails && <h2>{bookdetails?.items.volumeInfo.title}</h2>}
       {bookdetails && <h3>{bookdetails?.items.volumeInfo.authors}</h3>}
