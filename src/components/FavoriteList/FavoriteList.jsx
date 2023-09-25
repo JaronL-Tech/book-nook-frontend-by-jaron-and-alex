@@ -3,10 +3,10 @@ import react from "react";
 import { useState } from "react";
 import Favorite from "../Favorite/Favorite";
 
-const FavoriteList = ({BookDetailsDto, bookId }) => {
-  const ListofFavorites = BookDetailsDto.Favorite;
-  const Favorite =ListofFavorites.map((Favorite)) => (<Favorite key={favorite.id} favorite={favorite}  />)
-  return <div>{Favorite}</div>
+const FavoriteList = ({favorites }) => {
+
+  const Listoffavorites = favorites.map((favorite)) => (<Favorite key={favorite.id} favorite={favorite}  />)
+  return (<div>{Listoffavorites}</div>)
 
 };
 

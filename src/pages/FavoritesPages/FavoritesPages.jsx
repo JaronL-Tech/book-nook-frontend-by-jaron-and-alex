@@ -29,7 +29,11 @@ const FavoritesPage = ({}) => {
     FetchFavorites();
   }, []);
 
-  return <></>;
+  return (
+    <div>
+      <FavoriteList favorites={favorites} />
+    </div>
+  );
 };
 
 export default FavoritesPage;
