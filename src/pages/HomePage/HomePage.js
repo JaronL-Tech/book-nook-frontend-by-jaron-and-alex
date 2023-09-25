@@ -11,12 +11,12 @@ const HomePage = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    fetchCars();
+    fetchBooks();
   }, [token]);
 
-  const fetchCars = async () => {
+  const fetchBooks = async () => {
     try {
-      let response = await axios.get("https://localhost:5001/api/cars/myCars", {
+      let response = await axios.get("https://localhost:5001/api/bookdetails", {
         headers: {
           Authorization: "Bearer " + token,
         },

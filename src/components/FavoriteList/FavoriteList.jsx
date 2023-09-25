@@ -1,6 +1,7 @@
 import axios from "axios";
 import react from "react";
 import { useState } from "react";
+import Favorite from "../Favorite/Favorite";
 
 const FavoriteList = ({BookDetailsDto, bookId }) => {
   const ListofFavorites = BookDetailsDto.Favorite;
