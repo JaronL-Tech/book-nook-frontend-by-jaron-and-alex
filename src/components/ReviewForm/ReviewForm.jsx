@@ -2,7 +2,7 @@ import axios from "axios";
 import react from "react";
 import { useState } from "react";
 
-const ReviewForm = ({ fetchBookDetailsDto, user, token }) => {
+const ReviewForm = ({ fetchBookDetailsDto, bookDetails, user, token }) => {
   const [submitting, setsubmitting] = useState(false);
   const [BookId, setBookId] = useState("");
   const [Text, setText] = useState("");
@@ -13,7 +13,7 @@ const ReviewForm = ({ fetchBookDetailsDto, user, token }) => {
     setsubmitting(true);
 
     const formData = {
-      bookId: fetchBookDetailsDto.bookId,
+      bookId: bookDetails.bookId,
       Text,
       Rating,
       userId: user.id,
