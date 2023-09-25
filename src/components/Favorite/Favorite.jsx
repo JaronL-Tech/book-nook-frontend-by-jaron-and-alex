@@ -1,9 +1,8 @@
-const Favorite = ({ Favorite }) => {
+const Favorite = ({ title, thumbnailUrl }) => {
   return (
     <div className="favorite">
-      <h5>{Favorite.BookDetailsDto}</h5>
-      <p>{Favorite.BookId}</p>
-      <h5>{Favorite.AverageRating}</h5>
+      <img src={thumbnailUrl} alt="thumbail" />
+      <h4>{title}</h4>
     </div>
   );
 };

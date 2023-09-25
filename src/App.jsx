@@ -58,6 +58,14 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/favoritesPage"
+          element={
+            <PrivateRoute>
+              <FavoritesPage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
 
       <Footer />

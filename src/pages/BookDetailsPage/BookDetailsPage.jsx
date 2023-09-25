@@ -34,7 +34,7 @@ const BookDetailsPage = ({}) => {
   return (
     <div>
       <Book bookId={bookId} />
-      <h5>`Average User Rating:${}`</h5>
+      <h5>`Average User Rating:${bookdetailsDto.AverageRating}`</h5>
       <ReviewList BookDetailsDto={bookdetailsDto} bookId={bookId} />
       <ReviewForm
         fetchBookDetailsDto={fetchBookDetailsDto}
