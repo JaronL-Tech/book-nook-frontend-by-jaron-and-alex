@@ -12,7 +12,12 @@ const ReviewForm = ({ fetchBookDetailsDto, user, token }) => {
     e.preventDefault();
     setsubmitting(true);
 
-    const formData = { BookId, Text, Rating, userId: user.id };
+    const formData = {
+      bookId: fetchBookDetailsDto.bookId,
+      Text,
+      Rating,
+      userId: user.id,
+    };
 
     try {
       const response = await axios.post(
@@ -36,10 +41,6 @@ const ReviewForm = ({ fetchBookDetailsDto, user, token }) => {
     <form onSubmit={handdleSubmit} className="Flex-item">
       <h4>Add Review</h4>
       <div>
-        <div>
-          <label>BookId</label>
-          <input value={BookId} onChange={(e) => setBookId(e.target.value)} />
-        </div>
         <div>
           <label>Text</label>
           <input value={Text} onChange={(e) => setText(e.target.value)} />

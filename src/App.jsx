@@ -51,7 +51,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         {/* <Route path="/search" element={<SearchPage setBook={setBook} />} /> */}
         <Route
-          path="/bookdetailspage"
+          path="/:bookId"
           element={
             <PrivateRoute>
               <BookDetailsPage />

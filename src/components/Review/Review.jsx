@@ -1,9 +1,9 @@
-const Review = ({ Review }) => {
+const Review = ({ username, text, rating }) => {
   return (
     <div className="review">
-      <h5>{Review.userForDisplayDto}</h5>
-      <p>{Review.Text}</p>
-      <h5>{Review.Rating}</h5>
+      <h5>{username}</h5>
+      <p>{text}</p>
+      <h5>{rating}</h5>
     </div>
   );
 };

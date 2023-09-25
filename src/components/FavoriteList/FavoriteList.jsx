@@ -8,7 +8,7 @@ const FavoriteList = ({ favorites = [] }) => {
     <Favorite
       key={favorite.id}
       title={favorite.title}
-      thumnailUrl={favorite.thumnailUrl}
+      thumbnailUrl={favorite.thumbnailUrl}
     />
   ));
   return <div>{ListOfFavorites}</div>;
