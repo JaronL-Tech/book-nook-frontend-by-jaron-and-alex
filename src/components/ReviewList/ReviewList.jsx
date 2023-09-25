@@ -3,12 +3,12 @@ import axios from "axios";
 import { useState } from "react";
 import react from "react";
 
-const ReviewList = ({ BookDetailsDto }) => {
-  const listOfReviews = BookDetailsDto.Reviews;
+const ReviewList = ({ bookDetails }) => {
+  const listOfReviews = bookDetails.reviews;
   const Reviews = listOfReviews.map((review) => (
     <Review
       key={review.id}
-      username={review.userForDisplayDto.username}
+      username={review.user.userName}
       text={review.text}
       rating={review.rating}
     />
